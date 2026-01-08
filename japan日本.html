@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      #back-to-home  {
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: #4CAF50;
+        color: white;
+        padding: 16px 32px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+    <button id="back-to-home" onclick="window.location.href='./index.html'" onmouseover="this.style.backgroundColor='red'; this.style.color='yellow'" onmouseout="this.style.backgroundColor='#4CAF50'; this.style.color='white'">回到首頁</button>
+       <title>Japan日本</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <style>
+  #japan h2 {
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow-animation 1s infinite alternate;
+  }
+
+  @keyframes rainbow-animation {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(150px);
+    }
+  }
+
+      body {
+        background-color: yellow;
+        background-image: url('./Images/backgroundimage.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed; 
+        background-size: 100% 100%;
+        opacity: 0.9
+      }
+#japan {
+  background-color: lightyellow
+  ;
+  .toggle-button1 {
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .toggle-button1:hover {
+    background-color: rgb(10, 173, 35);
+  }
+}
+
+    </style>
+</head>
+<body>
+
+    <main>
+    <!-- 日本 -->
+    <section id="japan" class="country-section">
+      <h2>日本</h2>
+      <img src="./Images/Japan.jpg" alt="日本"  width="500" height="400">
+      
+      <p>日本擁有悠久的歷史與獨特的文化，融合了傳統與現代。日本的旅遊景點多元，四季分明，春天賞櫻、冬天滑雪都非常受歡迎。</p>
+      <button class="toggle-button1" onclick="toggleInfo('japan-info')">展開更多資訊</button>
+      <div id="japan-info" class="hidden">
+        <h3>歷史</h3>
+        <p>日本自古以天皇為中心，經歷武士時代、明治維新，現今是亞洲重要的現代化國家。</p>
+        <h3>文化</h3>
+        <ul>
+          <li>茶道、花道、和服、武士精神</li>
+          <li>動漫、祭典、溫泉文化</li>
+        </ul>
+        <h3>景點</h3>
+        <ul>
+          <li>東京塔、淺草寺、皇居</li>
+          <li>京都清水寺、金閣寺、伏見稻荷大社</li>
+          <li>大阪城、環球影城</li>
+          <li>富士山、北海道札幌雪祭</li>
+        </ul>
+        <h3>實用資訊</h3>
+        <ul>
+          <li>交通：新幹線、地鐵、Suica卡</li>
+          <li>語言：日語，部分地區英語可通</li>
+          <li>貨幣：日圓（JPY）</li>
+          <li>旅遊季節：春季賞櫻、冬季滑雪</li>
+        </ul>
+        <div class="video-container">
+           <iframe width="560" height="315" src="https://www.youtube.com/embed/Ic-XJlGkcGw?si=dSMVygmO3STFKVC7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          
+        </div>
+        <style>
+          #backToTop {
+            background-color: rgb(41, 0, 128);
+          }
+        </style>
+          <div> <button id="backToTop" onclick="scrollToTop()" onmouseover="this.style.backgroundColor='red'; this.style.color='lightblue'" onmouseout="this.style.backgroundColor='rgb(41, 0, 128)'; this.style.color='white'">回到頂端</button></div>
+  <footer>
+    <p>&copy; 2026 Allen Yao 旅遊資訊網</p>
+  </footer>
+   <script src="./js/script.js"></script>
+    </section>
+    </main>
+
+</body>
+</html>

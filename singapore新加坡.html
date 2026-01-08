@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      #back-to-home {
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: #4CAF50;
+        color: white;
+        padding: 16px 32px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+    <!-- <button id="back-to-home" onclick="window.location.href='./index.html'">回到首頁</button> -->
+     <button id="back-to-home" onclick="window.location.href='./index.html'" onmouseover="this.style.backgroundColor='red'; this.style.color='yellow'" onmouseout="this.style.backgroundColor='#4CAF50'; this.style.color='white'">回到首頁</button>
+    <title>新加坡</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+  <style>
+  #singapore h2 {
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow-animation 1s infinite alternate;
+  }
+#singapore {
+  background-color: lightgreen;
+}
+
+  @keyframes rainbow-animation {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(150px);
+    }
+  }
+
+      body {
+        background-color: green;
+        background-image: url('./Images/backgroundimage.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed; 
+        background-size: 100% 100%;
+        opacity: 0.9
+      }
+      .toggle-button1 {
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+  }
+  .toggle-button1:hover {
+    background-color: rgb(10, 173, 35);
+  }
+    </style>
+
+    <!-- 新加坡 -->                                                   
+    <section id="singapore" class="country-section">
+      <h2>新加坡</h2>
+      <img src="https://images.unsplash.com/photo-1600664356348-10686526af4f?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="新加坡"  width="500" height="400">
+      
+      <p>新加坡是一個多元種族的城市國家，融合了華人、馬來人、印度人和歐亞裔文化。以嚴謹的法治、乾淨的城市和高效率著稱。</p>
+      <button class="toggle-button1" onclick="toggleInfo('singapore-info')">展開更多資訊</button>
+      <div id="singapore-info" class="hidden">
+        <h3>歷史</h3>
+        <p>新加坡曾為英國殖民地，1965年獨立後迅速發展成為全球金融與貿易中心。</p>
+        <h3>文化</h3>
+        <ul>
+          <li>多元融合、嚴謹法治</li>
+          <li>美食文化：海南雞飯、叻沙、沙嗲</li>
+        </ul>
+        <h3>景點</h3>
+        <ul>
+          <li>濱海灣花園、魚尾獅公園</li>
+          <li>聖淘沙島、環球影城</li>
+          <li>牛車水、甘榜格南、印度小路</li>
+          <li>新加坡動物園、夜間野生動物園</li>
+        </ul>
+        <h3>實用資訊</h3>
+        <ul>
+          <li>交通：地鐵（MRT）、巴士、EZ-Link卡</li>
+          <li>語言：英語、華語、馬來語、淡米爾語</li>
+          <li>貨幣：新加坡元（SGD）</li>
+          <li>旅遊季節：全年皆適合，氣候炎熱潮濕</li>
+        </ul>
+        <div class="video-container">
+           <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/6wLqP2cQp1Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/UR2u4NjniwQ?si=KIHyUCmzFLetMX2W" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          
+      </div>
+         <style>
+          #backToTop {
+            background-color: purple;
+          }
+        </style>
+        <!-- <div> <button id="backToTop" onclick="scrollToTop()">回到頂端</button></div> -->
+        <div> <button id="backToTop" onclick="scrollToTop()" onmouseover="this.style.backgroundColor='red'; this.style.color='lightblue'" onmouseout="this.style.backgroundColor='rgb(41, 0, 128)'; this.style.color='white'">回到頂端</button></div>
+  <footer>
+    <p>&copy; 2026 Allen Yao 旅遊資訊網</p>
+  </footer>
+   <script src="./js/script.js"></script>
+    </section>
+</body>
+</html>

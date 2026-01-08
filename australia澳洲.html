@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Iansui&family=LXGW+WenKai+TC&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&display=swap" rel="stylesheet">
+    <style>
+      .lxgw-wenkai-tc-regular {
+       font-family: "LXGW WenKai TC", cursive;
+      font-weight: 400;
+      font-style: normal;
+}
+.iansui-regular {
+  font-family: "Iansui", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+body {
+  font-family:"Iansui", cursive;
+}
+      #australia h2 {
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow-animation 1s infinite alternate;
+    
+  }
+
+  @keyframes rainbow-animation {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(150px);
+    }
+  }
+#australia {
+  background-color: lightblue
+}
+
+      #back-to-home {
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: #4CAF50;
+        color: white;
+        padding: 16px 32px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+    <!-- <button id="back-to-home" onclick="window.location.href='./index.html'">回到首頁</button> -->
+      <button id="back-to-home" onclick="window.location.href='./index.html'" onmouseover="this.style.backgroundColor='red'; this.style.color='yellow'" onmouseout="this.style.backgroundColor='#4CAF50'; this.style.color='white'">回到首頁</button>
+    <title>澳洲</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+   <style>
+      body {
+        background-color: blue;
+        background-image: url('./Images/backgroundimage.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed; 
+        background-size: 100% 100%;
+        opacity: 0.9
+      }
+* {
+  box-sizing: border-box;
+}
+
+.auimg1 {
+  display: flex;
+  gap: 10px;
+  /* flex-wrap: wrap ; */
+  justify-content: space-between;
+  
+}
+
+Create three equal columns that sits next to each other */
+.auimg {
+  margin-left: 0px;
+  margin-right: 0px;
+  flex: 33%;
+  padding: 0px;
+} 
+.toggle-button1 {
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .toggle-button1:hover {
+    background-color: rgb(10, 173, 35);
+  }
+    </style>
+     <!-- 澳洲 -->
+    <section id="australia" class="country-section" class="au-section">
+      <h2>澳洲</h2>
+      <!-- <img class = "auimg" src="./Images/au1.jpg" alt="澳洲1"  width="500" height="400" style="width:100%">
+      <img class = "auimg" src="https://www.medibank.com.au/content/dam/livebetter/en/images/migrated/a91cb463f62517fac4326e7d89f9e975/iStock-519731334.jpg.thumb.1440.1440.png" alt="澳洲2"  width="500" height="400" style="width:100%">
+      <img class = "auimg" src="https://i.dailymail.co.uk/i/newpix/2018/09/03/12/30AA8C4400000578-0-image-a-42_1535973662161.jpg" alt="澳洲3"  width="500" height="400" style="width:100%"> -->
+      <div class="auimg1">
+      <img class = "auimg" src="https://www.medibank.com.au/content/dam/livebetter/en/images/migrated/a91cb463f62517fac4326e7d89f9e975/iStock-519731334.jpg.thumb.1440.1440.png" alt="澳洲2"  style="width:33%">
+      <img class = "auimg" src="./Images/au1.jpg" alt="澳洲1"  style="width:33%">
+      <img class = "auimg" src="https://i.dailymail.co.uk/i/newpix/2018/09/03/12/30AA8C4400000578-0-image-a-42_1535973662161.jpg" alt="澳洲3"  style="width:33%">
+      </div>
+    
+      <p>澳洲原住民文化悠久，現代則以多元移民社會著稱。澳洲人熱愛戶外活動，重視自然保育。</p>
+      <button class="toggle-button1" onclick="toggleInfo('australia-info')">展開更多資訊</button>
+      <div id="australia-info" class="hidden">
+        <h3>歷史</h3>
+        <p>澳洲原住民文化超過四萬年，1788年成為英國殖民地，現今是多元文化社會。</p>
+        <h3>文化</h3>
+        <ul>
+          <li>戶外活動、自然保育</li>
+          <li>運動風氣、藝術創作</li>
+        </ul>
+        <h3>景點</h3>
+        <ul>
+          <li>雪梨歌劇院、雪梨港灣大橋</li>
+          <li>大堡礁、黃金海岸</li>
+          <li>墨爾本藝術中心、菲利普島企鵝</li>
+          <li>烏魯魯巨岩、塔斯馬尼亞</li>
+        </ul>
+        <h3>實用資訊</h3>
+        <ul>
+          <li>交通：火車、巴士、Opal卡</li>
+          <li>語言：英語</li>
+          <li>貨幣：澳洲元（AUD）</li>
+          <li>旅遊季節：南半球，夏季12-2月，冬季6-8月</li>
+        </ul>
+        <!-- <div class="video-container">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/2X8Rj6b0bGg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29332256.25226939!2d133.41701195!3d-26.1772288!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2b2bfd076787c5df%3A0x538267a1955b1352!2sAustralia!5e0!3m2!1sen!2shk!4v1767497614235!5m2!1sen!2shk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    <footer>
+    <p>&copy; 2026 Allen Yao 旅遊資訊網</p>
+    <style>
+          #backToTop {
+            background-color: purple;
+          }
+        </style>
+    <!-- <div> <button id="backToTop" onclick="scrollToTop()">回到頂端</button></div> -->
+     <div> <button id="backToTop" onclick="scrollToTop()" onmouseover="this.style.backgroundColor='red'; this.style.color='lightblue'" onmouseout="this.style.backgroundColor='rgb(41, 0, 128)'; this.style.color='white'">回到頂端</button></div>
+  </footer>
+   <script src="./js/script.js"></script>
+    </section>
+  
+</body>
+</html>
