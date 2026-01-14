@@ -12,6 +12,9 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 <style>
 
   /* body {font-family: "Lato", sans-serif} */
@@ -59,12 +62,38 @@ body {
 .ul1:hover {
           background-color: purple;
           border-radius: 20px;
-        }
+}
 </style>
 </head>
 <body>
-      <header>
-    <div id="datetime" style="text-align: right; margin-right: 17px; font-size: 25px; color: rgb(11, 47, 37);"></div>
+        <header>
+          <div id="datetime" style="text-align: left;; margin-right: 0px; font-size: 25px; color: rgb(11, 47, 37);"></div>
+        <nav class="navbar" style="background-color: #1e90ff;" data-bs-theme="light" marging-top=0px>
+    <div class="container-fluid" >
+    <a class="navbar-brand" href="#"><img src="./Images/travel-svgrepo-com.svg" alt="logo"  width="50" height="50"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+       <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="ul1" class="nav-link active" aria-current="page" href="./japan日本.html" style="color: yellow;">Japan日本</a>
+        </li>
+        <li class="nav-item">
+          <a class="ul1" class="nav-link" href="./singapore新加坡.html" style="color: green;" >Singapore新加坡</a>
+        </li>
+        <li class="nav-item">
+          <a class="ul1" class="nav-link" href="./australia澳洲.html" style="color: blue ;">Australia澳洲</a>
+        </li>
+        <li class="nav-item">
+          <a class="ul1" class="nav-link" href="./thailand泰國.html"  style="color: orange;">Thailand泰國</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    
     
     <script>
       var datetime = document.getElementById("datetime");
@@ -79,70 +108,101 @@ body {
       updateDateTime();
       setInterval(updateDateTime, 1000);
     </script>
-    <img src="./Images/world-map1.jpg" alt="logo"  width="700" height="250">
+    <img src="./Images/world-map1.jpg" alt="logo"  width="1200" height="250">
         <h1 class="h1header">Allen Yao 旅遊資訊網</h1>
-        
-    <nav>
+ 
       <form action="https://www.google.com/search" method="get" target="_blank">
         <input type="text" name="q" placeholder="Search...">
         <button type="submit">Search</button>
       </form>
-      <ul>
-        <li><a class="ul1" href="./japan日本.html" style="color: yellow;">Japan日本</a></li>
-         <li><a class="ul1" href="./singapore新加坡.html" style="color: green;">Singapore新加坡</a></li>
-         <li><a class="ul1" href="./australia澳洲.html" style="color: blue;">Australia澳洲</a></li>
-          <li><a class="ul1" href="./thailand泰國.html" style="color: orange;">Thailand泰國</a></li>
-                </ul>
-    </nav>
+      
   </header>
  
   <main>
      <div class="w3-content" style="max-width:2000px;margin-top:46px"></div>
+
+<div id="carouselExampleIndicators" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="./Images/JapanH1.jpg" class="d-block w-100" alt="Japan">
+    </div>
+    <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="./Images/SingaporeH1.jpg" class="d-block w-100" alt="Singapore">
+    </div>
+    <div class="carousel-item">
+      <img src="./Images/AustriaH1.jpg" class="d-block w-100" alt="Australia">
+    </div>
+    <div class="carousel-item">
+      <img src="./Images/ThailandH1.jpg" class="d-block w-100" alt="Thailand">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
  <!-- Automatic Slideshow Images -->
-  <div class="mySlides w3-display-container w3-center">
-    <img src="./Images/JapanH1.jpg" style="width:100%">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>Japan日本</h3>
-      <p><b>Fujiyoshida, JapanWe</b></p>   
-    </div>
-  </div>
-  <div class="mySlides w3-display-container w3-center">
-    <img src="./Images/SingaporeH1.jpg" style="width:100%">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>Singapore新加坡</h3>
-      <p><b>Lights shone on the Merlion</b></p>    
-    </div>
-  </div>
-  <div class="mySlides w3-display-container w3-center">
-    <img src="./Images/ThailandH1.jpg" style="width:100%">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>Thailand泰國</h3>
-      <p><b>Bangkok, Thailand</b></p>    
-    </div>
-    </div>
-  <div class="mySlides w3-display-container w3-center">
-    <img src="./Images/AustriaH1.jpg" style="width:100%">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>Australia澳洲</h3>
-      <p><b>Melbourne City</b></p>    
-    </div>
-  </div>
+  …
    </main>
    
  <div> <button id="backToTop" onclick="scrollToTop()" onmouseover="this.style.backgroundColor='red'; this.style.color='lightblue'" onmouseout="this.style.backgroundColor='rgb(41, 0, 128)'; this.style.color='white'">回到頂端</button></div>
-  <!-- <footer>
-    <p>&copy; 2026 Allen Yao 旅遊資訊網</p>
-  </footer> -->
+  
+    
+
+  
   <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+    <style>
+      .contact-button {
+        background-color: #00bfff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        /* animation: colorChange 1s infinite alternate; */
+      }
+      /* @keyframes colorChange {
+        0% {
+          background-color: #00bfff;
+        }
+        50% {
+          background-color: #ff69b4;
+        /* } */
+        /* 100% {
+          background-color: #00bfff;
+        } */
+      /* } */ 
+    </style>
+    <a href="contact.html" class="contact-button">
+    Contact Me
+</a><br><br>
   <i class="fa fa-facebook-official w3-hover-opacity"></i>
   <i class="fa fa-instagram w3-hover-opacity"></i>
   <i class="fa fa-snapchat w3-hover-opacity"></i>
   <i class="fa fa-pinterest-p w3-hover-opacity"></i>
   <i class="fa fa-twitter w3-hover-opacity"></i>
   <i class="fa fa-linkedin w3-hover-opacity"></i>
+
   <p class="w3-medium">&copy; 2026 Allen Yao 旅遊資訊網</p>
 </footer>
-   <script src="./js/script.js"></script>
+
+
+
+<script src="./js/script.js"></script>
+
   
 <script>
 // Automatic Slideshow - change image every 4 seconds

@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>   
     <style>
           #thailand h2 {
     background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
@@ -65,11 +67,31 @@
         background-size: 100% 100%;
         opacity: 0.9
       }
+#borderimg { 
+  border: 25px solid transparent;
+  padding: 0%;
+  border-image: url(./Images/v976-041b.jpg)  30 stretch;
+}
+
     </style>
+
+<ul class="nav flex-column">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="./japan日本.html">Japan日本</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="./singapore新加坡.html">Singapore新加坡</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="./australia澳洲.html">Australia澳洲</a>
+  </li>
+  </ul>
+
+    
     <!-- 泰國 -->
     <section id="thailand" class="country-section">
       <h2>泰國</h2>
-      <img src="./Images/Taiwan.jpg" alt="泰國"  width="500" height="400">
+      <img src="./Images/Taiwan.jpg" alt="泰國" id="borderimg" width="500" height="400">
       
       <p>泰國以佛教文化為主，寺廟遍布全國。泰國人熱情友善，飲食文化多元，夜市和街頭美食聞名。</p>
       <button class="toggle-button1" onclick="toggleInfo('thailand-info')">展開更多資訊</button>

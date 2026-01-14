@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <style>
       #back-to-home {
         position: fixed;
@@ -20,9 +22,7 @@
      <button id="back-to-home" onclick="window.location.href='./index.html'" onmouseover="this.style.backgroundColor='red'; this.style.color='yellow'" onmouseout="this.style.backgroundColor='#4CAF50'; this.style.color='white'">回到首頁</button>
     <title>新加坡</title>
     <link rel="stylesheet" href="./CSS/style.css">
-</head>
-<body>
-  <style>
+ <style>
   #singapore h2 {
     background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
     -webkit-background-clip: text;
@@ -65,10 +65,26 @@
   }
     </style>
 
+</head>
+<body>
+ 
+  <ul class="nav flex-column">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="./japan日本.html">Japan日本</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="./australia澳洲.html">Australia澳洲</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href=".//thailand泰國.html">Thailand泰國</a>
+  </li>
+  </ul>
+  
+
     <!-- 新加坡 -->                                                   
     <section id="singapore" class="country-section">
       <h2>新加坡</h2>
-      <img src="https://images.unsplash.com/photo-1600664356348-10686526af4f?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="新加坡"  width="500" height="400">
+      <img src="https://images.unsplash.com/photo-1600664356348-10686526af4f?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-thumbnail"  alt="新加坡"  width="500" height="400">
       
       <p>新加坡是一個多元種族的城市國家，融合了華人、馬來人、印度人和歐亞裔文化。以嚴謹的法治、乾淨的城市和高效率著稱。</p>
       <button class="toggle-button1" onclick="toggleInfo('singapore-info')">展開更多資訊</button>
