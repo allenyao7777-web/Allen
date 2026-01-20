@@ -1,133 +1,452 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-HK">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="日本旅遊資訊 - 景點、文化、歷史及實用旅遊指南">
+    <title>Japan 日本 - Allen Yao 旅遊資訊網</title>
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Iansui&family=LXGW+WenKai+TC&family=Chiron+GoRound+TC:wght@200..900&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
     <style>
-      #back-to-home  {
-        position: fixed;
-        top: 0;
-        right: 0;
-        background-color: #4CAF50;
-        color: white;
-        padding: 16px 32px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-    </style>
-    <button id="back-to-home" onclick="window.location.href='./index.html'" onmouseover="this.style.backgroundColor='red'; this.style.color='yellow'" onmouseout="this.style.backgroundColor='#4CAF50'; this.style.color='white'">回到首頁</button>
-       <title>Japan日本</title>
-    <link rel="stylesheet" href="./CSS/style.css">
-    <style>
-  #japan h2 {
-    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: rainbow-animation 1s infinite alternate;
-  }
+        :root {
+            --primary-red: #c8102e; /* 日本紅 */
+            --nav-text-color: #ffffff; 
+        }
 
-  @keyframes rainbow-animation {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(150px);
-    }
-  }
+        body {
+            font-family: "Iansui", cursive, sans-serif;
+            /* --- ⚠️ 恢復您要求的黃色背景 --- */
+            background-color: yellow;
+            background-image: url('./Images/backgroundimage.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed; 
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+        }
 
-      body {
-        background-color: yellow;
-        background-image: url('./Images/backgroundimage.jpg');
-        background-repeat: no-repeat;
-        background-attachment: fixed; 
-        background-size: 100% 100%;
-        opacity: 0.9
-      }
-#japan {
-  background-color: lightyellow
-  ;
-  .toggle-button1 {
-    background-color: orange;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  .toggle-button1:hover {
-    background-color: rgb(10, 173, 35);
-  }
-}
+        * {
+            box-sizing: border-box;
+        }
 
+        /* --- 🌟 Trendy Colorful Animated Navbar (Japan Edition) --- */
+        
+        /* 1. 動態流動漸變背景 - 調整為日本粉紅/紫色系 */
+        .nav-container {
+            /* 漸變色：櫻花粉->熱情紅->紫色->橙色 */
+            background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fd1d1d, #c31432, #fcb045);
+            background-size: 400% 400%;
+            animation: gradient-flow 10s ease infinite;
+            
+            padding: 1.2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 15px rgba(200, 16, 46, 0.3); /* 紅色系陰影 */
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            border-radius: 0 0 15px 15px;
+        }
+
+        @keyframes gradient-flow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* 2. 導航連結樣式 */
+        .nav-link {
+            color: var(--nav-text-color) !important;
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin: 8px 0;
+            padding: 10px 20px;
+            border-radius: 30px;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2); 
+            overflow: hidden;
+        }
+
+        /* 3. 懸停效果 */
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.3); 
+            backdrop-filter: blur(5px);
+            transform: scale(1.05) translateX(10px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            letter-spacing: 1px;
+        }
+
+        .nav-link:active {
+            transform: scale(0.95);
+        }
+
+        /* 日本版專屬：使用櫻花圖標 */
+        .nav-link::before {
+            content: '🌸 '; 
+            display: inline-block;
+            margin-right: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-link:hover::before {
+            transform: rotate(45deg) scale(1.2); /* 懸停時櫻花轉動 */
+        }
+        
+        /* --- End of Navbar Styling --- */
+
+        /* Japan Section */
+        #japan {
+            /* --- ⚠️ 恢復淡黃色背景 (lightyellow + 0.92 opacity) --- */
+            background-color: rgba(255, 255, 224, 0.92);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Animated H2 */
+        @keyframes rainbow-move {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; transform: scale(1.05); }
+            100% { background-position: 0% 50%; }
+        }
+
+        #japan h2 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff);
+            background-size: 400%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            animation: rainbow-move 3s linear infinite;
+        }
+
+        /* Main Image */
+        .main-image-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .main-image {
+            border-radius: 50%;
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            box-shadow: 0 8px 20px rgba(200, 16, 46, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .main-image:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        /* Photo Gallery */
+        .gallery-container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 2rem 0;
+        }
+
+        .gallery-img {
+            flex: 1 1 30%;
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Toggle Button */
+        .toggle-button1 {
+            background-color: #ff8c00;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin: 1.5rem auto;
+            display: block;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        .toggle-button1:hover {
+            background-color: #0aad23;
+            transform: scale(1.1);
+        }
+
+        /* Back to Home Button */
+        #back-to-home {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            font-weight: bold;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        #back-to-home:hover {
+            background-color: red;
+            color: yellow;
+            animation: shake 0.5s;
+        }
+        
+        @keyframes shake {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(-5deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        /* Hidden Section */
+        .hidden {
+            display: none;
+        }
+
+        #japan-info {
+            margin-top: 1.5rem;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        #japan-info h3 {
+            color: var(--primary-red);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.5rem;
+        }
+
+        #japan-info ul {
+            list-style-type: disc;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        #japan-info li {
+            margin-bottom: 0.5rem;
+        }
+
+        #japan-info a {
+            color: #0066cc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        #japan-info a:hover {
+            background-color: var(--primary-red);
+            color: white;
+        }
+
+        /* Full Width Media */
+        .media-container {
+            width: 100%;
+            margin: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .full-width-iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        #backToTop {
+            background-color: #290080;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        #backToTop:hover {
+            background-color: red;
+            color: lightblue;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .gallery-img {
+                flex: 1 1 100%;
+                height: 200px;
+            }
+            #japan h2 {
+                font-size: 2.5rem;
+            }
+            .main-image {
+                max-width: 350px;
+            }
+        }
     </style>
 </head>
-<body>
 
-<ul class="nav flex-column">
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="./singapore新加坡.html">Singapore新加坡</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="./australia澳洲.html">Australia澳洲</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href=".//thailand泰國.html">Thailand泰國</a>
-  </li>
-  </ul>
-  
-    <main>
-    <!-- 日本 -->
-    <section id="japan" class="country-section">
-      <h2>日本</h2>
-      <img src="./Images/Japan.jpg" class="rounded-circle"alt="日本"  width="500" height="400">
-      
-      <p>日本擁有悠久的歷史與獨特的文化，融合了傳統與現代。日本的旅遊景點多元，四季分明，春天賞櫻、冬天滑雪都非常受歡迎。</p>
-      <button class="toggle-button1" onclick="toggleInfo('japan-info')">展開更多資訊</button>
-      <div id="japan-info" class="hidden">
-        <h3>歷史</h3>
-        <p>日本自古以天皇為中心，經歷武士時代、明治維新，現今是亞洲重要的現代化國家。</p>
-        <h3>文化</h3>
-        <ul>
-          <li>茶道、花道、和服、武士精神</li>
-          <li>動漫、祭典、溫泉文化</li>
+<body>
+    <button id="back-to-home" onclick="window.location.href='./index.html'" aria-label="返回首頁">回到首頁</button>
+
+    <!-- Trendy Animated Navbar (Japan Style) -->
+    <nav class="nav-container" aria-label="主要導航">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="./singapore新加坡.html">Singapore 新加坡</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./australia澳洲.html">Australia 澳洲</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./thailand泰國.html">Thailand 泰國</a>
+            </li>
         </ul>
-        <h3>景點</h3>
-        <ul>
-          <li>東京塔、淺草寺、皇居</li>
-          <li>京都清水寺、金閣寺、伏見稻荷大社</li>
-          <li>大阪城、環球影城</li>
-          <li>富士山、北海道札幌雪祭</li>
-        </ul>
-        <h3>實用資訊</h3>
-        <ul>
-          <li>交通：新幹線、地鐵、Suica卡</li>
-          <li>語言：日語，部分地區英語可通</li>
-          <li>貨幣：日圓（JPY）</li>
-          <li>旅遊季節：春季賞櫻、冬季滑雪</li>
-          <li><a href="https://www.japan.travel/tw/tw/" target="_blank" rel="noopener noreferrer" style="transition: all 0.3s ease-in-out;" onmouseover="this.style.backgroundColor='red'" onmouseout="this.style.backgroundColor='white'">日本國家旅遊局官方網站</a></li>
-          <li><a href="https://www.letsgojp.com/" target="_blank" rel="noopener noreferrer" style="transition: all 0.3s ease-in-out;" onmouseover="this.style.backgroundColor='red'" onmouseout="this.style.backgroundColor='white'">樂吃購！日本旅遊網站</a></li>
-          <li><a href="https://www.japan.travel/tw/weather/" target="_blank" rel="noopener noreferrer" style="transition: all 0.3s ease-in-out;" onmouseover="this.style.backgroundColor='red'" onmouseout="this.style.backgroundColor='white'">日本遊客天氣預報</a></li>
-        </ul>
-        <div class="video-container">
-           <iframe width="560" height="315" src="https://www.youtube.com/embed/Ic-XJlGkcGw?si=dSMVygmO3STFKVC7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          
-        </div>
-        <style>
-          #backToTop {
-            background-color: rgb(41, 0, 128);
-          }
-        </style>
-          <div> <button id="backToTop" onclick="scrollToTop()" onmouseover="this.style.backgroundColor='red'; this.style.color='lightblue'" onmouseout="this.style.backgroundColor='rgb(41, 0, 128)'; this.style.color='white'">回到頂端</button></div>
-  <footer>
-    <p>&copy; 2026 Allen Yao 旅遊資訊網</p>
-  </footer>
-   <script src="./js/script.js"></script>
-    </section>
+    </nav>
+
+    <main class="container">
+        <section id="japan">
+            <h2>日本</h2>
+
+            <div class="main-image-container">
+                <img src="./Images/Japan.jpg" class="main-image" alt="日本富士山" loading="lazy">
+            </div>
+
+            <p style="text-align: center; font-size: 1.2rem;">
+                日本擁有悠久的歷史與獨特的文化，融合了傳統與現代。日本的旅遊景點多元，四季分明，春天賞櫻、冬天滑雪都非常受歡迎。
+            </p>
+
+            <button class="toggle-button1" onclick="toggleInfo('japan-info')" aria-expanded="false" aria-controls="japan-info">
+                展開更多資訊
+            </button>
+
+            <div id="japan-info" class="hidden">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>📜 歷史</h3>
+                        <p>日本自古以天皇為中心，經歷武士時代、明治維新，現今是亞洲重要的現代化國家。</p>
+
+                        <h3>🎨 文化</h3>
+                        <ul>
+                            <li>茶道、花道、和服、武士精神</li>
+                            <li>動漫、祭典、溫泉文化</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-6">
+                        <h3>📍 景點</h3>
+                        <ul>
+                            <li>東京塔、淺草寺、皇居</li>
+                            <li>京都清水寺、金閣寺、伏見稻荷大社</li>
+                            <li>大阪城、環球影城</li>
+                            <li>富士山、北海道札幌雪祭</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>ℹ️ 實用資訊</h3>
+                <ul>
+                    <li>交通：新幹線、地鐵、Suica 卡</li>
+                    <li>語言：日語，部分地區英語可通</li>
+                    <li>貨幣：日圓（JPY）</li>
+                    <li>旅遊季節：春季賞櫻、冬季滑雪</li>
+                    <li>
+                        <a href="https://www.japan.travel/tw/tw/" target="_blank" rel="noopener noreferrer">
+                            日本國家旅遊局官方網站 🇯🇵
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.letsgojp.com/" target="_blank" rel="noopener noreferrer">
+                            樂吃購！日本旅遊網站
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.japan.travel/tw/weather/" target="_blank" rel="noopener noreferrer">
+                            日本遊客天氣預報 ☀️
+                        </a>
+                    </li>
+                </ul>
+
+                <h3>📸 照片集錦</h3>
+                <div class="gallery-container">
+                    <img src="./Images/Japan_photo_gallery1.jpg" class="gallery-img" alt="日本照片 1" loading="lazy">
+                    <img src="./Images/Japan_photo_gallery2.jpg" class="gallery-img" alt="日本照片 2" loading="lazy">
+                    <img src="./Images/Japan_photo_gallery3.jpg" class="gallery-img" alt="日本照片 3" loading="lazy">
+                </div>
+
+                <div class="media-container">
+                    <iframe class="full-width-iframe"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13777024.230142644!2d130.6769!3d36.2048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34674e0fd77f192f%3A0xf54275d47c665244!2sJapan!5e0!3m2!1sen!2shk!4v1737379200000!5m2!1sen!2shk"
+                            title="日本地圖"
+                            loading="lazy">
+                    </iframe>
+
+                    <iframe class="full-width-iframe"
+                            src="https://www.youtube.com/embed/Ic-XJlGkcGw?si=dSMVygmO3STFKVC7"
+                            title="日本旅遊影片"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen
+                            loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </section>
     </main>
 
+    <button id="backToTop" onclick="scrollToTop()" aria-label="返回頂端">回到頂端</button>
+
+    <footer>
+        <p>&copy; 2026 Allen Yao 旅遊資訊網</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>
