@@ -1,139 +1,399 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-HK">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>   
+    <meta name="description" content="泰國旅遊資訊 - 曼谷、清邁、普吉島旅遊景點與美食指南">
+    <title>Thailand 泰國 - Allen Yao 旅遊資訊網</title>
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Iansui&family=LXGW+WenKai+TC&family=Chiron+GoRound+TC:wght@200..900&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <style>
-          #thailand h2 {
-    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: rainbow-animation 1s infinite alternate;
-  }
-#thailand {
-  background-color: lightsalmon
-}
+        :root {
+            --thai-gold: #FFD700;   /* 泰國皇室金 */
+            --thai-purple: #800080; /* 泰國蘭花紫 */
+            --thai-orange: #FF8C00; /* 僧袍橘 */
+            --nav-text-color: #ffffff;
+        }
 
-  @keyframes rainbow-animation {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(150px);
-    }
-    
-  }
+        body {
+            font-family: "Iansui", cursive, sans-serif;
+            background-color: orange; /* 保留您原始的橘色背景 */
+            background-image: url('./Images/backgroundimage.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed; 
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            opacity: 1; /* 修正透明度 */
+        }
 
-      #back-to-home {
-        position: fixed;
-        top: 0;
-        right: 0;
-        background-color: #4CAF50;
-        color: white;
-        padding: 16px 32px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
+        /* --- 🌟 Trendy Colorful Animated Navbar (Thailand Edition) --- */
         
-      }
-.toggle-button1 {
-    background-color: orange;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  .toggle-button1:hover {
-    background-color: rgb(10, 173, 35);
-  }
+        /* 1. 動態流動漸變背景 - 泰國版 (金黃+紫+橘) */
+        .nav-container {
+            /* 漸變色：金黃 -> 深紫 -> 亮橘 -> 紅 */
+            background: linear-gradient(-45deg, #FFD700, #800080, #FF8C00, #FF0000);
+            background-size: 400% 400%;
+            animation: gradient-flow 10s ease infinite;
+            
+            padding: 1.2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 15px rgba(255, 140, 0, 0.4); /* 橘色系陰影 */
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            border-radius: 0 0 15px 15px;
+        }
 
+        @keyframes gradient-flow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* 2. 導航連結樣式 */
+        .nav-link {
+            color: var(--nav-text-color) !important;
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin: 8px 0;
+            padding: 10px 20px;
+            border-radius: 30px;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2); 
+            overflow: hidden;
+        }
+
+        /* 3. 懸停效果 */
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.25); 
+            backdrop-filter: blur(5px);
+            transform: scale(1.05) translateX(10px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            letter-spacing: 1px;
+        }
+
+        .nav-link:active {
+            transform: scale(0.95);
+        }
+
+        /* 泰國版專屬：使用大象圖標 */
+        .nav-link::before {
+            content: '🐘 '; 
+            display: inline-block;
+            margin-right: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-link:hover::before {
+            transform: rotate(10deg) scale(1.2); /* 懸停時大象擺動 */
+        }
+        
+        /* --- End of Navbar Styling --- */
+
+        /* Thailand Section */
+        #thailand {
+            /* 使用半透明橘色背景，保留原本色調但提升可讀性 */
+            background-color: rgba(255, 160, 122, 0.95); /* LightSalmon + Opacity */
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Animated H2 */
+        @keyframes rainbow-move {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; transform: scale(1.05); }
+            100% { background-position: 0% 50%; }
+        }
+
+        #thailand h2 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            
+            background: linear-gradient(
+                45deg, 
+                #ff0000, #ff7300, #fffb00, #48ff00, 
+                #00ffd5, #002bff, #7a00ff
+            );
+            background-size: 400%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            
+            animation: rainbow-move 3s linear infinite;
+        }
+
+        /* Border Image Styling */
+        #borderimg { 
+            border: 15px solid transparent;
+            padding: 5px;
+            /* 使用 CSS 漸變模擬原本的邊框圖片效果，確保圖片不丟失 */
+            border-image: linear-gradient(to right, gold, purple) 30;
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            display: block;
+            margin: 0 auto 2rem auto;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        #borderimg:hover {
+            transform: scale(1.02);
+        }
+
+        /* Card Grid Images */
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .card:hover .card-img-top {
+            transform: scale(1.1);
+        }
+
+        /* Toggle Button */
+        .toggle-button1 {
+            background-color: #ff8c00;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin: 2rem auto;
+            display: block;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        .toggle-button1:hover {
+            background-color: #0aad23;
+            transform: scale(1.1);
+        }
+
+        /* Back to Home Button */
+        #back-to-home {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            font-weight: bold;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        #back-to-home:hover {
+            background-color: red;
+            color: yellow;
+            animation: shake 0.5s;
+        }
+        
+        @keyframes shake {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(-5deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        /* Hidden Section */
+        .hidden {
+            display: none;
+        }
+
+        #thailand-info {
+            margin-top: 1.5rem;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Info Styling */
+        #thailand-info h3 {
+            color: #800080; /* 紫色標題 */
+            border-left: 5px solid var(--thai-gold);
+            padding-left: 10px;
+            margin-top: 1.5rem;
+        }
+
+        /* Full Width Media */
+        .media-container {
+            width: 100%;
+            margin: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .full-width-iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-radius: 8px;
+        }
+
+        #backToTop {
+            background-color: #290080;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        #backToTop:hover {
+            background-color: red;
+            color: lightblue;
+        }
     </style>
-    <!-- <button id="back-to-home" onclick="window.location.href='./index.html'">回到首頁</button> -->
-  <button  id="back-to-home" onclick="window.location.href='./index.html'" onmouseover="this.style.backgroundColor='red'; this.style.color='yellow'" onmouseout="this.style.backgroundColor='#4CAF50'; this.style.color='white'">回到首頁</button>
-    <title>泰國</title>
-    <link rel="stylesheet" href="./CSS/style.css">
 </head>
+
 <body>
-   <style>
-      body {
-        background-color: orange;
-        background-image: url('./Images/backgroundimage.jpg');
-        background-repeat: no-repeat;
-        background-attachment: fixed; 
-        background-size: 100% 100%;
-        opacity: 0.9
-      }
-#borderimg { 
-  border: 25px solid transparent;
-  padding: 0%;
-  border-image: url(./Images/v976-041b.jpg)  30 stretch;
-}
+    <button id="back-to-home" onclick="window.location.href='./index.html'" aria-label="返回首頁">回到首頁</button>
 
-    </style>
+    <!-- Trendy Animated Navbar (Thailand Style) -->
+    <nav class="nav-container" aria-label="主要導航">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="./japan日本.html">Japan 日本</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./singapore新加坡.html">Singapore 新加坡</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./australia澳洲.html">Australia 澳洲</a>
+            </li>
+        </ul>
+    </nav>
 
-<ul class="nav flex-column">
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="./japan日本.html">Japan日本</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="./singapore新加坡.html">Singapore新加坡</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="./australia澳洲.html">Australia澳洲</a>
-  </li>
-  </ul>
+    <main class="container">
+        <section id="thailand">
+            <h2>泰國</h2>
+            
+            <!-- Main Image with Special Border -->
+            <img src="./Images/Taiwan.jpg" alt="泰國" id="borderimg" loading="lazy">
+            
+            <p style="text-align: center; font-size: 1.2rem;">
+                泰國以佛教文化為主，寺廟遍布全國。泰國人熱情友善，飲食文化多元，夜市和街頭美食聞名。
+            </p>
+            
+            <button class="toggle-button1" onclick="toggleInfo('thailand-info')" aria-expanded="false" aria-controls="thailand-info">
+                展開更多資訊
+            </button>
+            
+            <div id="thailand-info" class="hidden">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>📜 歷史</h3>
+                        <p>泰國歷經蘇可泰王朝、阿瑜陀耶王朝，現今為君主立憲制國家。</p>
+                        
+                        <h3>🎨 文化</h3>
+                        <ul>
+                            <li>佛教、泰拳、潑水節</li>
+                            <li>夜市文化、街頭美食</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>📍 景點</h3>
+                        <ul>
+                            <li>曼谷大皇宮、臥佛寺</li>
+                            <li>清邁古城、白廟</li>
+                            <li>普吉島、蘇美島、芭達雅</li>
+                            <li>水上市場、夜市</li>
+                        </ul>
+                    </div>
+                </div>
 
-    
-    <!-- 泰國 -->
-    <section id="thailand" class="country-section">
-      <h2>泰國</h2>
-      <img src="./Images/Taiwan.jpg" alt="泰國" id="borderimg" width="500" height="400">
-      
-      <p>泰國以佛教文化為主，寺廟遍布全國。泰國人熱情友善，飲食文化多元，夜市和街頭美食聞名。</p>
-      <button class="toggle-button1" onclick="toggleInfo('thailand-info')">展開更多資訊</button>
-      <div id="thailand-info" class="hidden">
-        <h3>歷史</h3>
-        <p>泰國歷經蘇可泰王朝、阿瑜陀耶王朝，現今為君主立憲制國家。</p>
-        <h3>文化</h3>
-        <ul>
-          <li>佛教、泰拳、潑水節</li>
-          <li>夜市文化、街頭美食</li>
-        </ul>
-        <h3>景點</h3>
-        <ul>
-          <li>曼谷大皇宮、臥佛寺</li>
-          <li>清邁古城、白廟</li>
-          <li>普吉島、蘇美島、芭達雅</li>
-          <li>水上市場、夜市</li>
-        </ul>
-        <h3>實用資訊</h3>
-        <ul>
-          <li>交通：BTS捷運、計程車、嘟嘟車</li>
-          <li>語言：泰語，觀光區英語可通</li>
-          <li>貨幣：泰銖（THB）</li>
-          <li>旅遊季節：11-2月涼季最適合</li>
-        </ul>
-        <div class="video-container">
-          <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/6pQG6Wn0x6A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248057.49867579533!2d100.63311079999998!3d13.724599549999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d6032280d61f3%3A0x10100b25de24820!2sBangkok%2C%20Thailand!5e0!3m2!1sen!2shk!4v1767498174122!5m2!1sen!2shk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      
-        </div>
-      </div>
-       <style>
-          #backToTop {
-            background-color: purple;
-          }
-        </style>
-    <!-- <div> <button id="backToTop" onclick="scrollToTop()">回到頂端</button></div> -->
-     <div> <button id="backToTop" onclick="scrollToTop()" onmouseover="this.style.backgroundColor='red'; this.style.color='lightblue'" onmouseout="this.style.backgroundColor='rgb(41, 0, 128)'; this.style.color='white'">回到頂端</button></div>
-  <footer>
-    <p>&copy; 2026 Allen Yao 旅遊資訊網</p>
-  </footer>
-   <script src="./js/script.js"></script>
-    </section>
+                <h3>ℹ️ 實用資訊</h3>
+                <ul>
+                    <li>交通：BTS捷運、計程車、嘟嘟車</li>
+                    <li>語言：泰語，觀光區英語可通</li>
+                    <li>貨幣：泰銖（THB）</li>
+                    <li>旅遊季節：11-2月涼季最適合</li>
+                </ul>
+                
+                <div class="media-container">
+                    <iframe class="full-width-iframe"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248057.49867579533!2d100.63311079999998!3d13.724599549999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d6032280d61f3%3A0x10100b25de24820!2sBangkok%2C%20Thailand!5e0!3m2!1sen!2shk!4v1767498174122!5m2!1sen!2shk"
+                            title="泰國地圖"
+                            loading="lazy">
+                    </iframe>
+                </div>
+                
+                <!-- Gallery using Bootstrap Grid Cards -->
+                <h3 class="mb-4">📸 泰國風情</h3>
+                <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="./Images/thiland photo gallery 1.jpg" class="card-img-top" alt="泰國風景1" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="./Images/thiland photo gallery 2.jpg" class="card-img-top" alt="泰國風景2" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="./Images/thiland photo gallery 3.jpg" class="card-img-top" alt="泰國風景3" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                <p>&copy; 2026 Allen Yao 旅遊資訊網</p>
+                <button id="backToTop" onclick="scrollToTop()" aria-label="返回頂端">回到頂端</button>
+            </footer>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>

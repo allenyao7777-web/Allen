@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="澳洲旅遊資訊 - 景點、文化、歷史及實用旅遊指南">
-    <title>Australia 澳洲 - Allen Yao 旅遊資訊網</title>
+    <meta name="description" content="日本旅遊資訊 - 景點、文化、歷史及實用旅遊指南">
+    <title>Japan 日本 - Allen Yao 旅遊資訊網</title>
     
     <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,15 +18,14 @@
     
     <style>
         :root {
-            --au-gold: #FFCD00;     /* 澳洲國家代表色：金 */
-            --au-green: #00843D;    /* 澳洲國家代表色：綠 */
-            --ocean-blue: #00BFFF;  /* 海洋藍 */
-            --nav-text-color: #ffffff;
+            --primary-red: #c8102e; /* 日本紅 */
+            --nav-text-color: #ffffff; 
         }
 
         body {
             font-family: "Iansui", cursive, sans-serif;
-            background-color: blue; /* 保留您原始的藍色背景 */
+            /* --- ⚠️ 恢復您要求的黃色背景 --- */
+            background-color: yellow;
             background-image: url('./Images/backgroundimage.jpg');
             background-repeat: no-repeat;
             background-attachment: fixed; 
@@ -34,21 +33,24 @@
             background-position: center;
             margin: 0;
             padding: 0;
-            opacity: 1; /* 修正：移除 body 的透明度，改在子元素設置 */
         }
 
-        /* --- 🌟 Trendy Colorful Animated Navbar (Australia Edition) --- */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* --- 🌟 Trendy Colorful Animated Navbar (Japan Edition) --- */
         
-        /* 1. 動態流動漸變背景 - 澳洲版 (海洋藍+珊瑚橙+陽光金) */
+        /* 1. 動態流動漸變背景 - 調整為日本粉紅/紫色系 */
         .nav-container {
-            /* 漸變色：深海藍 -> 淺藍 -> 金黃 -> 珊瑚紅 */
-            background: linear-gradient(-45deg, #000046, #1CB5E0, #FFD700, #FF7F50);
+            /* 漸變色：櫻花粉->熱情紅->紫色->橙色 */
+            background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fd1d1d, #c31432, #fcb045);
             background-size: 400% 400%;
             animation: gradient-flow 10s ease infinite;
             
             padding: 1.2rem;
             margin-bottom: 1.5rem;
-            box-shadow: 0 4px 15px rgba(0, 191, 255, 0.3); /* 藍色系陰影 */
+            box-shadow: 0 4px 15px rgba(200, 16, 46, 0.3); /* 紅色系陰影 */
             border-bottom: 2px solid rgba(255,255,255,0.3);
             border-radius: 0 0 15px 15px;
         }
@@ -75,7 +77,7 @@
 
         /* 3. 懸停效果 */
         .nav-link:hover {
-            background-color: rgba(255, 255, 255, 0.25); 
+            background-color: rgba(255, 255, 255, 0.3); 
             backdrop-filter: blur(5px);
             transform: scale(1.05) translateX(10px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
@@ -86,26 +88,26 @@
             transform: scale(0.95);
         }
 
-        /* 澳洲版專屬：使用袋鼠圖標 */
+        /* 日本版專屬：使用櫻花圖標 */
         .nav-link::before {
-            content: '🦘 '; 
+            content: '🌸 '; 
             display: inline-block;
             margin-right: 8px;
             transition: transform 0.3s ease;
         }
 
         .nav-link:hover::before {
-            transform: rotate(20deg) scale(1.2); /* 懸停時袋鼠跳動 */
+            transform: rotate(45deg) scale(1.2); /* 懸停時櫻花轉動 */
         }
         
         /* --- End of Navbar Styling --- */
 
-        /* Australia Section */
-        #australia {
-            /* 修正：使用半透明背景替代 opacity，提升文字清晰度 */
-            background-color: rgba(173, 216, 230, 0.95); 
+        /* Japan Section */
+        #japan {
+            /* --- ⚠️ 恢復淡黃色背景 (lightyellow + 0.92 opacity) --- */
+            background-color: rgba(255, 255, 224, 0.92);
             padding: 2rem;
-            border-radius: 12px;
+            border-radius: 10px;
             margin: 1rem;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
@@ -117,48 +119,62 @@
             100% { background-position: 0% 50%; }
         }
 
-        #australia h2 {
+        #japan h2 {
             font-size: 3.5rem;
             font-weight: 900;
             text-align: center;
             margin-bottom: 1.5rem;
-            
-            background: linear-gradient(
-                45deg, 
-                #ff0000, #ff7300, #fffb00, #48ff00, 
-                #00ffd5, #002bff, #7a00ff
-            );
+            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff);
             background-size: 400%;
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
             color: transparent;
-            
             animation: rainbow-move 3s linear infinite;
         }
 
-        /* Image Grid (Bootstrap Cards) */
-        .card-img-top {
-            height: 250px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
+        /* Main Image */
+        .main-image-container {
+            text-align: center;
+            margin: 2rem 0;
         }
 
-        .card {
-            border: none;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        .main-image {
+            border-radius: 50%;
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            box-shadow: 0 8px 20px rgba(200, 16, 46, 0.3);
             transition: transform 0.3s ease;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        .main-image:hover {
+            transform: scale(1.05) rotate(2deg);
         }
-        
-        .card:hover .card-img-top {
-            transform: scale(1.1);
+
+        /* Photo Gallery */
+        .gallery-container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 2rem 0;
+        }
+
+        .gallery-img {
+            flex: 1 1 30%;
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.05);
         }
 
         /* Toggle Button */
@@ -171,13 +187,13 @@
             cursor: pointer;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            margin: 2rem auto;
+            margin: 1.5rem auto;
             display: block;
             box-shadow: 0 4px 6px rgba(0,0,0,0.2);
         }
 
         .toggle-button1:hover {
-            background-color: var(--au-green);
+            background-color: #0aad23;
             transform: scale(1.1);
         }
 
@@ -186,7 +202,7 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            background-color: var(--au-green);
+            background-color: #4CAF50;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -217,7 +233,7 @@
             display: none;
         }
 
-        #australia-info {
+        #japan-info {
             margin-top: 1.5rem;
             animation: fadeIn 0.8s ease-out;
         }
@@ -227,12 +243,35 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Info Styling */
-        #australia-info h3 {
-            color: #00008b; /* 深藍色標題 */
-            border-left: 5px solid var(--au-gold);
-            padding-left: 10px;
+        #japan-info h3 {
+            color: var(--primary-red);
             margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.5rem;
+        }
+
+        #japan-info ul {
+            list-style-type: disc;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        #japan-info li {
+            margin-bottom: 0.5rem;
+        }
+
+        #japan-info a {
+            color: #0066cc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        #japan-info a:hover {
+            background-color: var(--primary-red);
+            color: white;
         }
 
         /* Full Width Media */
@@ -254,12 +293,11 @@
 
         /* Footer */
         footer {
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(0, 0, 0, 0.9);
             color: white;
             text-align: center;
             padding: 2rem;
             margin-top: 3rem;
-            border-radius: 8px;
         }
 
         #backToTop {
@@ -277,20 +315,34 @@
             background-color: red;
             color: lightblue;
         }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .gallery-img {
+                flex: 1 1 100%;
+                height: 200px;
+            }
+            #japan h2 {
+                font-size: 2.5rem;
+            }
+            .main-image {
+                max-width: 350px;
+            }
+        }
     </style>
 </head>
 
 <body>
     <button id="back-to-home" onclick="window.location.href='./index.html'" aria-label="返回首頁">回到首頁</button>
 
-    <!-- Trendy Animated Navbar (Australia Style) -->
+    <!-- Trendy Animated Navbar (Japan Style) -->
     <nav class="nav-container" aria-label="主要導航">
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link" href="./japan日本.html">Japan 日本</a>
+                <a class="nav-link" href="./singapore新加坡.html">Singapore 新加坡</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./singapore新加坡.html">Singapore 新加坡</a>
+                <a class="nav-link" href="./australia澳洲.html">Australia 澳洲</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="./thailand泰國.html">Thailand 泰國</a>
@@ -299,94 +351,85 @@
     </nav>
 
     <main class="container">
-        <section id="australia">
-            <h2>澳洲</h2>
-            
-            <!-- Gallery using Bootstrap Grid Cards -->
-            <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="https://www.medibank.com.au/content/dam/livebetter/en/images/migrated/a91cb463f62517fac4326e7d89f9e975/iStock-519731334.jpg.thumb.1440.1440.png" class="card-img-top" alt="澳洲無尾熊" loading="lazy">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">澳洲無尾熊</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="./Images/au1.jpg" class="card-img-top" alt="澳洲風景" loading="lazy">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">雪梨歌劇院</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="https://i.dailymail.co.uk/i/newpix/2018/09/03/12/30AA8C4400000578-0-image-a-42_1535973662161.jpg" class="card-img-top" alt="澳洲袋鼠" loading="lazy">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">澳洲袋鼠</h5>
-                        </div>
-                    </div>
-                </div>
+        <section id="japan">
+            <h2>日本</h2>
+
+            <div class="main-image-container">
+                <img src="./Images/Japan.jpg" class="main-image" alt="日本富士山" loading="lazy">
             </div>
-            
+
             <p style="text-align: center; font-size: 1.2rem;">
-                澳洲原住民文化悠久，現代則以多元移民社會著稱。澳洲人熱愛戶外活動，重視自然保育。
+                日本擁有悠久的歷史與獨特的文化，融合了傳統與現代。日本的旅遊景點多元，四季分明，春天賞櫻、冬天滑雪都非常受歡迎。
             </p>
-            
-            <button class="toggle-button1" onclick="toggleInfo('australia-info')" aria-expanded="false" aria-controls="australia-info">
+
+            <button class="toggle-button1" onclick="toggleInfo('japan-info')" aria-expanded="false" aria-controls="japan-info">
                 展開更多資訊
             </button>
-            
-            <div id="australia-info" class="hidden">
+
+            <div id="japan-info" class="hidden">
                 <div class="row">
                     <div class="col-md-6">
                         <h3>📜 歷史</h3>
-                        <p>澳洲原住民文化超過四萬年，1788年成為英國殖民地，現今是多元文化社會。</p>
-                        
+                        <p>日本自古以天皇為中心，經歷武士時代、明治維新，現今是亞洲重要的現代化國家。</p>
+
                         <h3>🎨 文化</h3>
                         <ul>
-                            <li>戶外活動、自然保育</li>
-                            <li>運動風氣、藝術創作</li>
+                            <li>茶道、花道、和服、武士精神</li>
+                            <li>動漫、祭典、溫泉文化</li>
                         </ul>
                     </div>
+
                     <div class="col-md-6">
                         <h3>📍 景點</h3>
                         <ul>
-                            <li>雪梨歌劇院、雪梨港灣大橋</li>
-                            <li>大堡礁、黃金海岸</li>
-                            <li>墨爾本藝術中心、菲利普島企鵝</li>
-                            <li>烏魯魯巨岩、塔斯馬尼亞</li>
+                            <li>東京塔、淺草寺、皇居</li>
+                            <li>京都清水寺、金閣寺、伏見稻荷大社</li>
+                            <li>大阪城、環球影城</li>
+                            <li>富士山、北海道札幌雪祭</li>
                         </ul>
                     </div>
                 </div>
 
                 <h3>ℹ️ 實用資訊</h3>
                 <ul>
-                    <li>交通：火車、巴士、Opal卡</li>
-                    <li>語言：英語</li>
-                    <li>貨幣：澳洲元（AUD）</li>
-                    <li>旅遊季節：南半球，夏季12-2月，冬季6-8月</li>
+                    <li>交通：新幹線、地鐵、Suica 卡</li>
+                    <li>語言：日語，部分地區英語可通</li>
+                    <li>貨幣：日圓（JPY）</li>
+                    <li>旅遊季節：春季賞櫻、冬季滑雪</li>
                     <li>
-                        <a href="https://www.australia.com/zh-hk/facts-and-planning/weather-in-australia.html" 
-                           target="_blank" 
-                           rel="noopener noreferrer"
-                           style="color: red; font-weight: bold; text-decoration: none;">
-                           澳洲遊客天氣預報 ☀️
+                        <a href="https://www.japan.travel/tw/tw/" target="_blank" rel="noopener noreferrer">
+                            日本國家旅遊局官方網站 🇯🇵
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.letsgojp.com/" target="_blank" rel="noopener noreferrer">
+                            樂吃購！日本旅遊網站
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.japan.travel/tw/weather/" target="_blank" rel="noopener noreferrer">
+                            日本遊客天氣預報 ☀️
                         </a>
                     </li>
                 </ul>
-                
+
+                <h3>📸 照片集錦</h3>
+                <div class="gallery-container">
+                    <img src="./Images/Japan_photo_gallery1.jpg" class="gallery-img" alt="日本照片 1" loading="lazy">
+                    <img src="./Images/Japan_photo_gallery2.jpg" class="gallery-img" alt="日本照片 2" loading="lazy">
+                    <img src="./Images/Japan_photo_gallery3.jpg" class="gallery-img" alt="日本照片 3" loading="lazy">
+                </div>
+
                 <div class="media-container">
                     <iframe class="full-width-iframe"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29332256.25226939!2d133.41701195!3d-26.1772288!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2b2bfd076787c5df%3A0x538267a1955b1352!2sAustralia!5e0!3m2!1sen!2shk!4v1767497614235!5m2!1sen!2shk"
-                            title="澳洲地圖"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13777024.230142644!2d130.6769!3d36.2048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34674e0fd77f192f%3A0xf54275d47c665244!2sJapan!5e0!3m2!1sen!2shk!4v1737379200000!5m2!1sen!2shk"
+                            title="日本地圖"
                             loading="lazy">
                     </iframe>
-                    
+
                     <iframe class="full-width-iframe"
-                            src="https://www.youtube.com/embed/K5m_jVGIgcA?si=i6rh2FCcP-F4zri3" 
-                            title="澳洲旅遊影片" 
+                            src="https://www.youtube.com/embed/Ic-XJlGkcGw?si=dSMVygmO3STFKVC7"
+                            title="日本旅遊影片"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                             referrerpolicy="strict-origin-when-cross-origin"
                             allowfullscreen
@@ -394,13 +437,14 @@
                     </iframe>
                 </div>
             </div>
-
-            <footer>
-                <p>&copy; 2026 Allen Yao 旅遊資訊網</p>
-                <button id="backToTop" onclick="scrollToTop()" aria-label="返回頂端">回到頂端</button>
-            </footer>
         </section>
     </main>
+
+    <button id="backToTop" onclick="scrollToTop()" aria-label="返回頂端">回到頂端</button>
+
+    <footer>
+        <p>&copy; 2026 Allen Yao 旅遊資訊網</p>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/script.js"></script>
