@@ -39,7 +39,7 @@
 
     #landing-overlay.slide-up {
       transform: translateY(-100%);
-      pointer-events: none; /* 加上這行，避免透明層擋住主頁點擊 */
+      pointer-events: none; /* 避免透明層擋住主頁點擊 */
     }
 
     /* Landing Video */
@@ -162,7 +162,7 @@
     .carousel-item img { height: 500px; object-fit: cover; border-radius: 15px; }
     .carousel { box-shadow: 0 10px 30px rgba(0,0,0,0.3); border-radius: 15px; background: #fff; }
 
-    /* --- Colorful Game Section Styles (New) --- */
+    /* --- Colorful Game Section Styles --- */
     .container1 {
         position: relative;
         overflow: hidden;
@@ -186,7 +186,7 @@
         transform: rotate(-8deg);
     }
 
-    /* 玻璃層 (讓字體清楚) */
+    /* 玻璃層 */
     .container1::after {
         content: "";
         position: absolute;
@@ -262,13 +262,12 @@
     </div>
   </div>
 
-
   <!-- =========================================
        MAIN WEBSITE
        ========================================= -->
   <nav class="navbar fixed-top navbar-expand-lg" data-bs-theme="dark">
     <div class="container-fluid">
-      <!-- 這裡加了 id="brandHome" 用於綁定點擊事件 -->
+      <!-- 點擊此 Logo 重播 Landing Video -->
       <a class="navbar-brand d-flex align-items-center" href="#" id="brandHome">
         <img src="./Images/travel-svgrepo-com.svg" alt="Logo" width="40" height="40" class="me-2">
         <span class="fw-bold">Home</span>
@@ -403,52 +402,79 @@
     const body = document.body;
 
     // ---------------------------------------------
-    // 1. Landing Page Logic (進入網頁)
+    // 1. Landing Page Logic
     // ---------------------------------------------
-    function hideLanding() {
-        landingOverlay.classList.add('slide-up');
+    
+    // 定義隱藏 Landing 的函式
+    function hideLanding(instant = false) {
+        if (instant) {
+            landingOverlay.style.display = 'none'; // 瞬間消失
+        } else {
+            landingOverlay.classList.add('slide-up'); // 動畫上滑
+        }
+        
         body.classList.remove('no-scroll');
-        body.style.paddingTop = "56px";
+        body.style.paddingTop = "56px"; 
 
-        // 優化效能：動畫結束後暫停影片
+        // 稍微延遲後暫停影片
         setTimeout(() => {
             if(landingVideo) landingVideo.pause();
         }, 1000);
     }
 
-    enterBtn.addEventListener('click', hideLanding);
+    // Enter 按鈕事件
+    if(enterBtn) {
+        enterBtn.addEventListener('click', () => hideLanding(false));
+    }
+
+    // 檢查 URL 是否有 ?skip=true
+    document.addEventListener("DOMContentLoaded", () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('skip') === 'true') {
+            hideLanding(true); // 傳入 true，執行瞬間隱藏
+        }
+    });
 
     // ---------------------------------------------
-    // 2. Return to Landing Logic (回首頁重播)
+    // 2. Return to Landing Logic (點擊 Logo 重播)
     // ---------------------------------------------
     function showLanding() {
-        // 先回到頂部，避免穿幫
         window.scrollTo({ top: 0, behavior: "smooth" });
-
-        // 移除 slide-up 讓它滑下來
-        landingOverlay.classList.remove('slide-up');
         
-        // 鎖定滾動
+        // 如果之前被 display:none 隱藏了，先恢復顯示
+        landingOverlay.style.display = 'flex';
+        
+        // 強制 Reflow 讓瀏覽器知道要重新計算樣式 (關鍵！)
+        void landingOverlay.offsetWidth; 
+
+        landingOverlay.classList.remove('slide-up');
         body.classList.add('no-scroll');
 
-        // 重置並播放 Landing 影片
         if (landingVideo) {
             landingVideo.currentTime = 0;
             landingVideo.play().catch(e => console.log("Auto-play prevented:", e));
         }
+
+        // 清除 skip 參數，這樣重新整理頁面會正常顯示影片
+        const url = new URL(window.location);
+        url.searchParams.delete('skip');
+        window.history.replaceState({}, '', url);
     }
 
-    brandHome.addEventListener('click', (e) => {
-        e.preventDefault(); // 阻止原本的 href="#" 跳轉
-        showLanding();
-    });
+    if(brandHome) {
+        brandHome.addEventListener('click', (e) => {
+            e.preventDefault();
+            showLanding();
+        });
+    }
 
     // ---------------------------------------------
     // 3. Main Page Functionality
     // ---------------------------------------------
     function updateDateTime() {
       const now = new Date();
-      document.getElementById("datetime").textContent = now.toLocaleString('zh-HK', { hour12: false });
+      const timeElement = document.getElementById("datetime");
+      if(timeElement) timeElement.textContent = now.toLocaleString('zh-HK', { hour12: false });
     }
     setInterval(updateDateTime, 1000);
     updateDateTime();
@@ -465,16 +491,18 @@
     ];
 
     let isSpinning = false;
-    function spinWheel() {
+    window.spinWheel = function() {
       if (isSpinning) return;
       isSpinning = true;
       const spinBtn = document.getElementById('spinBtn');
       const result = document.getElementById('result');
       const wheel = document.getElementById('wheel');
 
-      spinBtn.disabled = true;
-      result.textContent = '🤞 命運轉動中...';
-      result.className = 'result';
+      if(spinBtn) spinBtn.disabled = true;
+      if(result) {
+          result.textContent = '🤞 命運轉動中...';
+          result.className = 'result';
+      }
 
       const randomIndex = Math.floor(Math.random() * countries.length);
       const selectedCountry = countries[randomIndex];
@@ -483,15 +511,17 @@
       const randomOffset = Math.floor(Math.random() * 60) - 30; 
       const targetRotation = (extraRotations * 360) + (360 - segmentCenter) + randomOffset;
 
-      wheel.style.transform = `rotate(${targetRotation}deg)`;
+      if(wheel) wheel.style.transform = `rotate(${targetRotation}deg)`;
 
       setTimeout(() => {
-        result.innerHTML = `🎉 恭喜！你抽中了 <strong>${selectedCountry.emoji} ${selectedCountry.name}</strong>！<br><small>3秒後自動導航...</small>`;
-        result.classList.add('show-redirect');
+        if(result) {
+            result.innerHTML = `🎉 恭喜！你抽中了 <strong>${selectedCountry.emoji} ${selectedCountry.name}</strong>！<br><small>3秒後自動導航...</small>`;
+            result.classList.add('show-redirect');
+        }
         setTimeout(() => {
           window.location.href = selectedCountry.url;
           isSpinning = false;
-          spinBtn.disabled = false;
+          if(spinBtn) spinBtn.disabled = false;
         }, 3000);
       }, 4000);
     }
