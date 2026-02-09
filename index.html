@@ -39,7 +39,7 @@
 
     #landing-overlay.slide-up {
       transform: translateY(-100%);
-      pointer-events: none; /* 避免透明層擋住主頁點擊 */
+      pointer-events: none; 
     }
 
     /* Landing Video */
@@ -107,7 +107,7 @@
       transform: scale(1.05);
     }
 
-    /* 禁止 Body 在 Landing page 時捲動 */
+    
     body.no-scroll {
       overflow: hidden;
     }
@@ -174,7 +174,7 @@
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     }
 
-    /* 彩色動態背景層 */
+    
     .container1::before {
         content: "";
         position: absolute;
@@ -186,7 +186,7 @@
         transform: rotate(-8deg);
     }
 
-    /* 玻璃層 */
+    
     .container1::after {
         content: "";
         position: absolute;
@@ -197,7 +197,7 @@
         -webkit-backdrop-filter: blur(10px);
     }
 
-    /* 內容層 (浮在最上面) */
+    
     .container1 > * {
         position: relative;
         z-index: 2;
@@ -254,7 +254,7 @@
 
     <div class="landing-content">
       <h1 class="landing-title">Allen Yao Travel</h1>
-      <p class="landing-subtitle">探索世界 • 體驗不凡 • 啟程冒險</p>
+      <p class="landing-subtitle">路可以暫時停, 但腳步可以選擇不停。 </p>
       
       <button class="enter-btn" id="enterSiteBtn">
         進入主網頁 <i class="fas fa-chevron-right ms-2"></i>
@@ -278,7 +278,15 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto text-center">
           <li class="nav-item"><a class="nav-link ul1 nav-contact" href="./contact.html">聯絡我&#128150;</a></li>
-          <li class="nav-item"><a class="nav-link ul1 nav-game" href="#game">轉盤冒險遊戲&#127919;</a></li>
+          <li class="nav-item"><a class="nav-link ul1 nav-game" href="#game" style="
+            background: linear-gradient(45deg, #ff0000, #ff7300, #ffd700, #008000, #0000ff, #4b0082, #ee82ee);
+            background-size: 400%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            animation: rainbow-move 3s linear infinite;
+          ">轉盤冒險遊戲 &#127919;</a></li>
           <li class="nav-item"><a class="nav-link ul1 nav-jp" href="./japan日本.html">Japan 日本&#127983;</a></li>
           <li class="nav-item"><a class="nav-link ul1 nav-sg" href="./singapore新加坡.html">Singapore 新加坡&#128333;</a></li>
           <li class="nav-item"><a class="nav-link ul1 nav-au" href="./australia澳洲.html">Australia 澳洲&#128040;</a></li>
